@@ -1,0 +1,39 @@
+{
+  "name": "clarifycoder-vscode",
+  "displayName": "ClarifyCoder Assistant",
+  "description": "Clarification-first coding assistant that asks targeted questions before generating code.",
+  "version": "0.0.1",
+  "publisher": "clarifycoder",
+  "engines": {
+    "vscode": "^1.88.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:clarifycoder.analyzeSelection"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "clarifycoder.analyzeSelection",
+        "title": "ClarifyCoder: Analyze Selection"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "lint": "eslint src --ext .ts"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.88.0",
+    "@types/node": "^20.11.30",
+    "typescript": "^5.4.5",
+    "eslint": "^9.0.0"
+  }
+}
+

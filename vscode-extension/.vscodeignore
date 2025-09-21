@@ -1,0 +1,7 @@
+out/test
+src
+.vscode-test/**
+.git/**
+**/*.map
+node_modules/.bin
+

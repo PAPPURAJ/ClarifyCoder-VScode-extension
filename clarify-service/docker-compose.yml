@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  clarify-service:
+    build: .
+    container_name: clarify-service
+    ports:
+      - "8001:8001"
+    restart: unless-stopped
+    environment:
+      - PORT=8001
+

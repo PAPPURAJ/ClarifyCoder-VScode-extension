@@ -1,0 +1,119 @@
+{
+  "name": "clarifycoder-vscode",
+  "displayName": "ClarifyCoder Assistant",
+  "description": "Clarification-first coding assistant that asks targeted questions before generating code.",
+  "version": "0.0.1",
+  "publisher": "clarifycoder",
+  "engines": {
+    "vscode": "^1.88.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:clarifycoder.analyzeSelection",
+    "onCommand:clarifycoder.toggleAutoAnalyze",
+    "onStartupFinished",
+    "onView:clarifycoder.panel"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "clarifycoder",
+          "title": "ClarifyCoder",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "clarifycoder.analyzeSelection",
+        "title": "ClarifyCoder: Analyze Selection"
+      },
+      {
+        "command": "clarifycoder.toggleAutoAnalyze",
+        "title": "ClarifyCoder: Toggle Auto Analyze"
+      },
+      {
+        "command": "clarifycoder.analyzeActiveFile",
+        "title": "ClarifyCoder: Analyze Active File"
+      }
+    ],
+    "views": {
+      "clarifycoder": [
+        {
+          "id": "clarifycoder.panel",
+          "name": "ClarifyCoder Chat"
+        }
+      ]
+    },
+    "menus": {
+      "editor/context": [
+        {
+          "command": "clarifycoder.analyzeSelection",
+          "group": "navigation@10"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "clarifycoder.analyzeActiveFile",
+          "group": "navigation@10"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "clarifycoder.analyzeActiveFile",
+          "when": "view == clarifycoder.panel",
+          "group": "navigation@10"
+        }
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "ClarifyCoder Settings",
+      "properties": {
+        "clarifycoder.serviceUrl": {
+          "type": "string",
+          "default": "https://api.clarifycoder.pappuraj.com",
+          "description": "Clarify Service base URL"
+        },
+        "clarifycoder.enableAutoAnalyze": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable automatic analysis of the active file"
+        },
+        "clarifycoder.analyzeOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Analyze the current file on save"
+        },
+        "clarifycoder.maxQuestions": {
+          "type": "number",
+          "default": 3,
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Maximum number of questions to display"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "lint": "eslint src --ext .ts"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.88.0",
+    "@types/node": "^20.11.30",
+    "typescript": "^5.4.5",
+    "eslint": "^9.0.0"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
+
