@@ -499,3 +499,26 @@ This project demonstrates a complete development cycle from API design to produc
 - **User Experience:** Intuitive GUI for non-technical users
 
 The ClarifyCoder extension successfully bridges the gap between research concepts and practical developer tools, providing a real-world implementation of clarification-first development assistance with a fully functional production backend at `https://api.clarifycoder.pappuraj.com`.
+
+## Credits and Acknowledgments
+
+**Original Research and Implementation:**
+- **Jie "JW" Wu** - Assistant Professor @ Michigan Tech
+- **Original Repository:** [https://github.com/jie-jw-wu/clarify-coder](https://github.com/jie-jw-wu/clarify-coder)
+- **Research Paper:** "ClarifyCoder: Clarification-Aware Fine-Tuning for Programmatic Problem Solving" (arXiv:2504.16331, 2025)
+
+This project extends the original ClarifyCoder research by implementing:
+- **Production Backend API** with FastAPI and Docker deployment
+- **VS Code Extension** with real-time integration
+- **Custom Server Infrastructure** with public domain deployment
+- **User-friendly GUI** for non-technical users
+
+**Citation:**
+```bibtex
+@article{wu2025clarifycoder,
+   title={ClarifyCoder: Clarification-Aware Fine-Tuning for Programmatic Problem Solving},
+   author={Wu, Jie JW and Fard, Fatemeh H.},
+   journal={arXiv preprint arXiv:2504.16331},
+   year={2025}
+}
+```
