@@ -12,6 +12,16 @@ The ClarifyCoder backend is deployed and running on a custom server setup with:
 - **Nginx Reverse Proxy:** SSL/HTTPS configuration
 - **Auto-restart:** Production-ready with monitoring
 
+## 📦 Ready-to-Install Extension
+
+**VS Code Extension Package:** `vscode-extension/Output extension/clarifycoder-vscode-extension.vsix`
+
+The ClarifyCoder VS Code extension is packaged and ready for installation:
+- **Pre-built VSIX:** Complete extension package with all features
+- **Production API Integration:** Configured to use live backend
+- **Screenshots Included:** Visual documentation in the extension
+- **One-click Install:** Ready for immediate use in VS Code
+
 ## Project Overview
 
 ClarifyCoder is a clarification-first development assistant that helps developers identify ambiguities in their code and requirements. This project demonstrates the full cycle of:
@@ -427,13 +437,14 @@ docker-compose logs -f clarify-service
 
 1. **Install Extension:**
    ```bash
-   code --install-extension clarifycoder-vscode-final.vsix
+   # Install the pre-built extension
+   code --install-extension "vscode-extension/Output extension/clarifycoder-vscode-extension.vsix"
    ```
 
-2. **Configure API Endpoint:**
+2. **Configure API Endpoint (Optional):**
    - Open VS Code Settings
    - Search for "ClarifyCoder"
-   - Set `Service URL` to your API endpoint
+   - Set `Service URL` to your API endpoint (defaults to production API)
 
 3. **Use Extension:**
    - Click ClarifyCoder icon in Activity Bar
@@ -467,10 +478,15 @@ docker-compose logs -f clarify-service
 
 **Live Production System:**
 - **Backend API:** `https://api.clarifycoder.pappuraj.com` (Custom server deployment)
-- **VS Code Extension:** Available as VSIX package with production API integration
+- **VS Code Extension:** `vscode-extension/Output extension/clarifycoder-vscode-extension.vsix` (Ready-to-install package)
 - **Infrastructure:** Custom Linux server with Docker, Nginx, and SSL
 - **Monitoring:** Auto-restart and health check endpoints
 - **Security:** HTTPS/SSL encryption for all API communications
+
+**Quick Start:**
+1. Install: `code --install-extension "vscode-extension/Output extension/clarifycoder-vscode-extension.vsix"`
+2. Open VS Code and click the ClarifyCoder icon in the Activity Bar
+3. Start using the extension with the live production backend
 
 ## Conclusion
 
